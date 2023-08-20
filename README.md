@@ -15,9 +15,8 @@
 
 ### 2. 구성
 > Vue.js 3 (로그인/강제 로그아웃 테스트용 웹)
->> DNS : Cloud flare (https://www.cloudflare.com/ko-kr) 
->
-> WEB : Netilfy (https://www.netlify.com)
+>> DNS : Cloud flare (https://www.cloudflare.com/ko-kr) <br>
+>> WEB : Netilfy (https://www.netlify.com)
 
 > API
 > - Java(JPA)? Go? 
