@@ -26,3 +26,5 @@
 
 > Oracle (계정정보 저장)
 >> Oracle Cloud Infrastructure freetier (https://www.oracle.com/kr/cloud/free)
+
+freetier 위주로 찾아보긴 했는데 비용이슈 발생하면 그냥 방에 있는 조그마한 서버에 세팅하는것도 방법일듯 ~~근데 매번 키기가 귀찮아~~
