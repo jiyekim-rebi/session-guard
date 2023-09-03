@@ -2,7 +2,7 @@
   "name": "web",
   "version": "0.0.1",
   "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "productName": "Session-Guard",
   "author": "jiemu <rebianne03@naver.com>",
   "private": true,
   "scripts": {
