@@ -17,3 +17,6 @@
 > 
 > UI framework : Quasar (https://quasar.dev) <br>
 > State-management library : Pinia (https://pinia.vuejs.kr)
+
+### Update History
+- 2023.10.02 Branch [Web] : 초기 세팅본 merge
