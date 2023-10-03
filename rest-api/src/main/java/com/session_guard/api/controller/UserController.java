@@ -2,7 +2,7 @@ package com.session_guard.api.controller;
 
 import com.session_guard.api.dao.Response;
 import com.session_guard.api.dao.UserDAO;
-import com.session_guard.api.entity.UserVO;
+import com.session_guard.api.entity.User;
 import com.session_guard.api.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,9 +31,9 @@ public class UserController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<Object> getUser(@RequestBody UserVO reqUser) {
+    public ResponseEntity<Object> getUser(@RequestBody User reqUser) {
         Response response = new Response();
-        UserVO user = userService.findUser(reqUser.getUserId(), reqUser.getPassword());
+        User user = userService.findUser(reqUser.getUserId(), reqUser.getPassword());
         UserDAO result = new UserDAO();
 
         if (user == null) {
