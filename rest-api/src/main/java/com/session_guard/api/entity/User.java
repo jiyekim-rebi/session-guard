@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@ToString
 @Table(name="tbl_user")
 @NoArgsConstructor
 public class User {

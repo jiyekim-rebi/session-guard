@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -21,26 +20,27 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // test
-    @GetMapping("/check")
-    public ResponseEntity<Object> check() {
+    @PostMapping("/check")
+    public ResponseEntity<Object> checkUser(@RequestBody UserDAO reqUser) {
         Response response = new Response();
-        response.setReason("Hello, this is session rest-api");
 
-        return ResponseEntity.status(HttpStatus.OK).body(response);
-    }
+        logger.info("Check User : search user information");
+        logger.info("Check User : Request = " + reqUser.toString());
 
-    @PostMapping("/")
-    public ResponseEntity<Object> getUser(@RequestBody User reqUser) {
-        Response response = new Response();
+        if (reqUser == null) {
+            response.setReason("request body is empty");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+
         User user = userService.findUser(reqUser.getUserId(), reqUser.getPassword());
-        UserDAO result = new UserDAO();
+        logger.info("result : " + user.toString());
 
         if (user == null) {
             response.setReason("user is not found");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
 
+        UserDAO result = new UserDAO();
         result.setId(user.getId());
         result.setUserId(user.getUserId());
 
