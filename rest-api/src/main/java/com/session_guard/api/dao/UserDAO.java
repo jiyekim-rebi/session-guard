@@ -22,4 +22,7 @@ public class UserDAO {
     @JsonProperty("password")
     private String password;
 
+    @JsonProperty("token")
+    private String token;
+
 }

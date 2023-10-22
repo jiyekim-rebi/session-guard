@@ -3,6 +3,7 @@ package com.session_guard.api.entity;
 
 import lombok.Getter;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,15 +16,20 @@ public class UserToken {
 
     @Id
     private String id;
+
     private String userId;
+
+    @Indexed
+    private String token;
+
     private LocalDateTime createdAt;
 
-    public UserToken(String userId) {
+    public UserToken(String userId, String token) {
         LocalDateTime now = LocalDateTime.now();
 
         this.userId = userId;
+        this.token = token;
         this.createdAt = now;
-
     }
 
 }
