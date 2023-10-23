@@ -23,6 +23,11 @@ public class UserController {
     public ResponseEntity<Object> checkUser(@RequestBody UserDAO reqUser) {
         Response response = new Response();
 
+        if (reqUser == null || "".equals(reqUser.getUserId())) {
+            response.setReason("request body is empty or user_id is empty");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(response);
+        }
+
         log.debug("Check User : search user information");
         log.debug("Check User : " + reqUser.toString());
 
