@@ -41,3 +41,4 @@ freetier 위주로 찾아보긴 했는데 비용이슈 발생하면 그냥 방�
 ### Update History
 - 2023.10.02 Branch [web] : 초기 세팅본 merge
 - 2023.10.03 Branch [rest-api] : 초기 세팅본 merge (check api 간략 추가)
+- 2023.10.29 Branch [rest-api] : redis 설정, login/logout api 추가
