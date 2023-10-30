@@ -49,11 +49,10 @@ public class UserController {
     }
 
     /**
-     * checkUser : Deprecated (token search로 변경)
+     * @Deprecated checkUser : Deprecated (token search로 변경)
      * @param reqUser
      * @return ResponseEntity
      */
-    @Deprecated
     @PostMapping("/check")
     public ResponseEntity<Object> checkUser(@RequestBody UserDAO reqUser) {
         Response response = new Response();
