@@ -24,6 +24,9 @@ public class UserToken {
     @Indexed
     private String token;
 
+    private String device; // 접속한 device
+    private String ip; // 접속한 IP
+
     private LocalDateTime createdAt;
 
     public UserToken(String userId, String token) {
