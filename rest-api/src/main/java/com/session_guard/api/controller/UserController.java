@@ -53,7 +53,7 @@ public class UserController {
      * @param reqUser
      * @return ResponseEntity
      */
-    @PostMapping("/check")
+경    @PostMapping("/check/info")
     public ResponseEntity<Object> checkUser(@RequestBody UserDAO reqUser) {
         Response response = new Response();
 
