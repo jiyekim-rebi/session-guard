@@ -21,20 +21,20 @@
     <q-page-container
       v-if="!isLogin"
       class="fit column wrap justify-center items-center content-center">
-        <div>
-          <q-card class="q-pa-md align-center" style="min-width: 400px; max-width: 400px;">
-            <q-card-section>
-              <h3 class="text-h5">Todo-List 로그인</h3>
-            </q-card-section>
-            <q-card-section>
-              <q-input v-model="userId" label="이메일"/>
-              <q-input v-model="password" label="비밀번호" type="password"/>
-            </q-card-section>
-            <q-card-actions>
-              <q-btn color="primary" @click="requestLogin">로그인</q-btn>
-            </q-card-actions>
-          </q-card>
-        </div>
+      <div>
+        <q-card class="q-pa-md align-center" style="min-width: 400px; max-width: 400px;">
+          <q-card-section>
+            <h3 class="text-h5">Todo-List 로그인</h3>
+          </q-card-section>
+          <q-card-section>
+            <q-input v-model="userId" label="이메일"/>
+            <q-input v-model="password" label="비밀번호" type="password"/>
+          </q-card-section>
+          <q-card-actions>
+            <q-btn color="primary" @click="requestLogin">로그인</q-btn>
+          </q-card-actions>
+        </q-card>
+      </div>
       <div style="overflow: auto; height: 150px;"></div>
     </q-page-container>
 
@@ -58,12 +58,12 @@ const isLogin = computed(() => {
 
 function requestLogin() {
 
-  if (userId.value == '') {
+  if (userId.value === '') {
     alert('ID를 입력해주세요')
     return
   }
 
-  if (password.value == '') {
+  if (password.value === '') {
     alert('Password를 입력해주세요')
     return
   }
