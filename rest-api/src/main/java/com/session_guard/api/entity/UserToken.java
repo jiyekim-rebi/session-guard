@@ -1,24 +1,23 @@
 package com.session_guard.api.entity;
 
 
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-// 트랜잭션 적용하고 싶으면 RedisTemplate
-// timeToLive : 만효 시간을 seconds 단위로 설정
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @ToString
-@RedisHash(value="token", timeToLive = 1800)
+@RedisHash(value="userToken", timeToLive = 1800) // 만료시간 설정(seconds)
 public class UserToken {
 
-    @Id
-    private String id;
-
+    @Id // import 주의(org.springframework.data.annotation.Id)
     private String userId;
 
     @Indexed

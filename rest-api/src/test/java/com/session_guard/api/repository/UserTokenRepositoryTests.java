@@ -24,7 +24,6 @@ class UserTokenRepositoryTests {
 
         UserToken getToken = userTokenRepository.findByToken(userToken.getToken());
 
-        logger.info("id: {}", getToken.getId());
         logger.info("token: {}", getToken.getToken());
         logger.info("userId: {}", getToken.getUserId());
 
